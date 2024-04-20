@@ -55,4 +55,21 @@ func main() {
 	// float64, float32 -> 10.5
 	// bool -> true , false
 
+	// Checking the user is eligible to play the game or not
+	fmt.Printf("What is your age: ")
+	var age uint
+	fmt.Scan(&age)
+
+	// If elif else statement
+	if age >= 10 {
+		fmt.Println("Yay! you can play the game.")
+	} else {
+		fmt.Println("Sorry, you cannot play the game.")
+		// return -> stops the execution of the program and return a value
+		// Here it will stop the execution of the main function and return a value
+		return
+	}
+
+	// The following statements will only be executed if the user is eligible to play the game
+
 }
