@@ -60,7 +60,7 @@ func main() {
 	var age uint
 	fmt.Scan(&age)
 
-	// If elif else statement
+	// If elseif else statement
 	if age >= 10 {
 		fmt.Println("Yay! you can play the game.")
 	} else {
@@ -71,5 +71,44 @@ func main() {
 	}
 
 	// The following statements will only be executed if the user is eligible to play the game
+
+	// Quiz questions
+
+	// Question 01
+
+	fmt.Printf("What is better, the RTX 3080 or the RTX 3090: ")
+	var answer string
+	var answer2 string
+
+	// Scan -> only scans the first word entered by the user (before separated by a space)
+	// We need to use multiple variables to get multiple words from the user
+	// There are other ways to take multiple words from the user too. (Check them out in the future)
+	fmt.Scan(&answer, &answer2)
+
+	// String concatenation -> "RTX" + "3090" -> "RTX3090"
+	// We would need to add a space between the	answer and answer2
+	if answer+" "+answer2 == "RTX 3090" {
+		fmt.Println("Correct!")
+	} else if answer+" "+answer2 == "rtx 3090" {
+		fmt.Println("Correct!")
+	} else {
+		fmt.Println("Incorrect!")
+	}
+
+	// Question 02
+
+	fmt.Printf("How many cores does the Ryzen 9 3900x have: ")
+
+	// We don't need to declare the variable again if we are using the same variable name
+	// But here we want a variable with type int, so we need to declare another variable
+	// (because we cannot change the data type of a variable once it is declared)
+	var answer3 uint
+	fmt.Scan(&answer3)
+
+	if answer3 == 12 {
+		fmt.Println("Correct!")
+	} else {
+		fmt.Println("Incorrect!")
+	}
 
 }
