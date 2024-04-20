@@ -47,6 +47,7 @@ func main() {
 	// %s -> string
 	// \n -> new line
 	fmt.Printf("Hello %v, Welcome to the game!\n", name) // fmt.Println("Hello", name)
+	// We don't need to write as &name when we are using fmt.Printf
 
 	// Some data type in GO
 	// string -> "Hello"
@@ -74,6 +75,11 @@ func main() {
 
 	// Quiz questions
 
+	// Adding a variable to count the number of correct answers
+	correctAnswers := 0
+	// Adding a variable to count the number of questions
+	questions := 2
+
 	// Question 01
 
 	fmt.Printf("What is better, the RTX 3080 or the RTX 3090: ")
@@ -87,10 +93,11 @@ func main() {
 
 	// String concatenation -> "RTX" + "3090" -> "RTX3090"
 	// We would need to add a space between the	answer and answer2
-	if answer+" "+answer2 == "RTX 3090" {
+	// || -> OR operator
+	// && -> AND operator
+	if answer+" "+answer2 == "RTX 3090" || answer+" "+answer2 == "rtx 3090" {
 		fmt.Println("Correct!")
-	} else if answer+" "+answer2 == "rtx 3090" {
-		fmt.Println("Correct!")
+		correctAnswers++
 	} else {
 		fmt.Println("Incorrect!")
 	}
@@ -107,8 +114,23 @@ func main() {
 
 	if answer3 == 12 {
 		fmt.Println("Correct!")
+		correctAnswers++
 	} else {
 		fmt.Println("Incorrect!")
 	}
+
+	fmt.Printf("You scored %v out of %v questions.\n", correctAnswers, questions)
+	// We don't need to write as &correctAnswers and &questions when we are using fmt.Printf
+
+	// Get the percentage of the correct answers
+	// Int/ Int -> Int
+	// Float/ Float -> Float
+	// We need to convert the correctAnswers to float64 before dividing it by questions
+	// Otherwise, the result will be 0 (because both are integers)
+	// Because it will get rounded off to the nearest integer
+	percentage := (float64(correctAnswers) / float64(questions)) * 100
+	// To add a % sign inside Printf, we need to use %v%% (%% -> %)
+	// (because % is treated as a formatting character in Printf)
+	fmt.Printf("You scored %v%%\n", percentage)
 
 }
