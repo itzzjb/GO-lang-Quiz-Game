@@ -1,0 +1,16 @@
+> Go is a compile-based language
+> our computer can't understand it as it is.
+> We need to compile the code through a compiler that get the source code and translate into a executable file in a lower level language.
+
+> When it comes to languages like python you need to definitely have python installed in the machine in order to run a code.
+> But in go (compile based languages) , if the code is already compiled you don't need the language to be installed in order to run the program.
+
+Running a go file -> go run <File name>
+> This will compile the go file into a executable binary code and runs that code.
+> Then immediately deletes the binary code file after the output is given to us.
+
+Package a go file into a executable binary file -> go build <File name>
+> This will compile the code manually.
+> The file type will be dependent on the OS
+> Win -> .exe (To run the file in terminal -> filename.exe)
+> Mac / Linux -> (To run the file in terminal -> ./filename)
